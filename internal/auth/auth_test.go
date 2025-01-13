@@ -15,7 +15,7 @@ func TestGetAPIKeyEmptyAuthHeader(t *testing.T) {
 		t.Errorf("expected empty apiKey, got %s", apiKey)
 	}
 
-	if errors.Is(err, ErrNoAuthHeaderIncluded) {
+	if !errors.Is(err, ErrNoAuthHeaderIncluded) {
 		t.Errorf("expected error %v, got %v", ErrNoAuthHeaderIncluded, err)
 	}
 }
