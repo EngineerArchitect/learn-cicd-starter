@@ -1,4 +1,4 @@
-name: ci
+name: Style
 
 on:
   pull_request:
@@ -20,3 +20,6 @@ jobs:
 
       - name: Force Failure
         run: go test -cover ./...
+
+      - name: Check Linting
+        run: test -z $(go fmt ./...)
